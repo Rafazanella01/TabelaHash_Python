@@ -1,7 +1,7 @@
 from TabelaHash import TabelaHash
 
 # Criar a tabela hash
-tamanho_tabela = 999
+tamanho_tabela = 97
 tabela = TabelaHash(tamanho_tabela)
 
 # Menu

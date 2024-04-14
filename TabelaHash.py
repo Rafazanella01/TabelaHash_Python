@@ -9,7 +9,6 @@ class TabelaHash:
         return chave % self.tamanho
 
     def inserir(self, chave, valor):
-        #chave = chave % 1000
         indice = self.hash(chave)
         for item in self.tabela[indice]:
             if item[0] == chave:
@@ -27,7 +26,6 @@ class TabelaHash:
         return None
     
     def excluir(self, chave):
-        #chave = chave % 1000 + 1
         indice = self.hash(chave)
         lista = self.tabela[indice]
         for item in lista:
@@ -49,12 +47,6 @@ class TabelaHash:
             valor = random.randint(1, 999)
             base_dados.append((chave, valor))
         return base_dados
-    
-    def contarElementos(self):
-        contador = 0
-        for lista in self.tabela:
-            contador += len(lista)
-        return contador
     
     def visualizar(self):
         for i in range(len(self.tabela)):
