@@ -1,5 +1,4 @@
 from TabelaHash import TabelaHash
-from ListaEncadeada import ListaEncadeada
 
 def buscar_por_chave(tabela):
     chave_busca = int(input("Digite a chave que deseja buscar: "))
@@ -36,7 +35,7 @@ def inserir_valor(tabela):
     print("Valor inserido com sucesso.")
 
 # Criar a tabela hash
-tamanho_tabela = 1000
+tamanho_tabela = 999
 tabela = TabelaHash(tamanho_tabela)
 
 # Menu
@@ -48,7 +47,8 @@ while True:
     print("4. Ordenar tabela")
     print("5. Excluir valor por chave")
     print("6. Inserir novo valor")
-    print("7. Sair")
+    print("7. Visualizar toda tabela")
+    print("8. Sair")
 
     opcao = input("Escolha uma opção: ")
 
@@ -68,7 +68,10 @@ while True:
     elif opcao == "6":
         inserir_valor(tabela)
     elif opcao == "7":
+        tabela.visualizar()
+    elif opcao == "8":
         print("Saindo...")
         break
     else:
         print("Opção inválida. Por favor, escolha uma opção válida.")
+
