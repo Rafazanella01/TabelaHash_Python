@@ -27,7 +27,7 @@ class TabelaHash:
         return None
     
     def excluir(self, chave):
-        chave = chave % 1000 + 1
+        #chave = chave % 1000 + 1
         indice = self.hash(chave)
         lista = self.tabela[indice]
         for item in lista:
@@ -39,9 +39,10 @@ class TabelaHash:
     def ordenar(self):
         for lista in self.tabela:
             lista.sort()
+        print("Tabela ordenada com sucesso.")
 
     @staticmethod   
-    def criar_base_dados(tamanho):
+    def criarBaseDados(tamanho):
         base_dados = []
         for _ in range(tamanho):
             chave = random.randint(1, 999)
@@ -49,7 +50,7 @@ class TabelaHash:
             base_dados.append((chave, valor))
         return base_dados
     
-    def contar_elementos(self):
+    def contarElementos(self):
         contador = 0
         for lista in self.tabela:
             contador += len(lista)
@@ -58,3 +59,36 @@ class TabelaHash:
     def visualizar(self):
         for i in range(len(self.tabela)):
             print(f"Índice {i}: {self.tabela[i]}")
+
+    def buscarPorChave(self):
+        chave_busca = int(input("Digite a chave que deseja buscar: "))
+        valor_encontrado = self.buscar(chave_busca)
+        if valor_encontrado is not None:
+            print(f"Valor encontrado para a chave {chave_busca}: {valor_encontrado}")
+        else:
+            print(f"Nenhum valor encontrado para a chave {chave_busca}")
+
+    def imprimirTodosValores(self):
+        for lista in self.tabela:
+            if lista:
+                for chave, valor in lista:
+                    print(f"Chave: {chave}, Valor: {valor}")
+
+    def preencherComBaseDados(self):
+        base_dados = self.criarBaseDados(self.tamanho)
+        for chave, valor in base_dados:
+            self.inserir(chave, valor)
+        print("Tabela preenchida com sucesso.")
+
+    def excluirPorChave(self):
+        chave_exclusao = int(input("Digite a chave que deseja excluir: "))
+        if self.excluir(chave_exclusao):
+            print(f"Chave {chave_exclusao} excluída com sucesso.")
+        else:
+            print(f"Chave {chave_exclusao} não encontrada na tabela.")
+
+    def inserirNovoValor(self):
+        chave = int(input("Digite a chave que deseja inserir: "))
+        valor = input("Digite o valor que deseja associar à chave: ")
+        self.inserir(chave, valor)
+        print("Valor inserido com sucesso.")

@@ -1,39 +1,5 @@
 from TabelaHash import TabelaHash
 
-def buscar_por_chave(tabela):
-    chave_busca = int(input("Digite a chave que deseja buscar: "))
-    valor_encontrado = tabela.buscar(chave_busca)
-    if valor_encontrado is not None:
-        print(f"Valor encontrado para a chave {chave_busca}: {valor_encontrado}")
-    else:
-        print(f"Nenhum valor encontrado para a chave {chave_busca}")
-
-def imprimir_todos_valores(tabela):
-    for lista in tabela.tabela:
-        if lista is not None:
-            for chave, valor in lista:
-                print(f"Chave: {chave}, Valor: {valor}")
-
-def preencher_tabela_com_base_dados(tabela, base_dados):
-    for chave, valor in base_dados:
-        tabela.inserir(chave, valor)
-
-def ordenar_tabela(tabela):
-    tabela.ordenar()
-
-def excluir_por_chave(tabela):
-    chave_exclusao = int(input("Digite a chave que deseja excluir: "))
-    if tabela.excluir(chave_exclusao):
-        print(f"Chave {chave_exclusao} excluída com sucesso.")
-    else:
-        print(f"Chave {chave_exclusao} não encontrada na tabela.")
-
-def inserir_valor(tabela):
-    chave = int(input("Digite a chave que deseja inserir: "))
-    valor = input("Digite o valor que deseja associar à chave: ")
-    tabela.inserir(chave, valor)
-    print("Valor inserido com sucesso.")
-
 # Criar a tabela hash
 tamanho_tabela = 999
 tabela = TabelaHash(tamanho_tabela)
@@ -53,20 +19,17 @@ while True:
     opcao = input("Escolha uma opção: ")
 
     if opcao == "1":
-        buscar_por_chave(tabela)
+        tabela.buscarPorChave()
     elif opcao == "2":
-        imprimir_todos_valores(tabela)
+        tabela.imprimirTodosValores()
     elif opcao == "3":
-        base_dados = TabelaHash.criar_base_dados(999)
-        preencher_tabela_com_base_dados(tabela, base_dados)
-        print("Tabela preenchida com sucesso.")
+        tabela.preencherComBaseDados()
     elif opcao == "4":
-        ordenar_tabela(tabela)
-        print("Tabela ordenada com sucesso.")
+        tabela.ordenar()
     elif opcao == "5":
-        excluir_por_chave(tabela)
+        tabela.excluirPorChave()
     elif opcao == "6":
-        inserir_valor(tabela)
+        tabela.inserirNovoValor()
     elif opcao == "7":
         tabela.visualizar()
     elif opcao == "8":
