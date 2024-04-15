@@ -31,7 +31,7 @@ class TabelaHash:
             if item[0] == matricula:  #Verifica se a matrícula está na lista
                 return item[1]  #Se encontrou a matrícula, retorna o valor associado
        
-        return None  #Se a matrícula não foi encontrada, retorna None
+        return None  #Se a matrícula não foi encontrada, retorna Nulo
     
     def buscarSequencial(self, matricula): #Busca sequencialmente o valor associado a uma matrícula na tabela hash
 
@@ -63,7 +63,7 @@ class TabelaHash:
     def criarBaseDados(tamanho): #Cria uma base de dados aleatória com matrículas e valores associados
         base_dados = []
         for _ in range(tamanho):
-            #Gera uma matrícula no formato 'mxxxxxx' e um valor aleatório entre 1 e 999
+            #Gera uma matrícula no formato 'mxxxxxx'
             matricula = f'm{random.randint(0, 999999):06d}'
             valor = random.randint(1, 999)
           
@@ -94,7 +94,7 @@ class TabelaHash:
 
     def preencherComBaseDados(self): #Preenche a tabela hash com uma base de dados aleatória
         
-        base_dados = self.criarBaseDados(self.tamanho)
+        base_dados = self.criarBaseDados(999)
         for matricula, valor in base_dados:
             self.inserir(matricula, valor) #Insere cada par (matrícula, valor) na tabela hash
         print("Tabela preenchida com sucesso.")  #Exibe uma mensagem indicando que o preenchimento foi concluído
