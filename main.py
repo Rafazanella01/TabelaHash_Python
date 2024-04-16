@@ -37,7 +37,7 @@ while True:
             tabela.visualizar()
         elif opcao == "7":
             matriculaHash,  matriculaSequencial = input("Digite a matricula para ser comparada(Entre espaço): ").split()
-            
+        
             tempoHash = timeit.timeit(lambda: tabela.buscar(matriculaHash), number=10000)
             tempoSequencial = timeit.timeit(lambda: tabela.buscarSequencial(matriculaSequencial), number=10000)
 

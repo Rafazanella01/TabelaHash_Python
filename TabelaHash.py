@@ -64,7 +64,7 @@ class TabelaHash:
         base_dados = []
         for _ in range(tamanho):
             #Gera uma matrícula no formato 'mxxxxxx'
-            matricula = f'm{random.randint(0, 999999):06d}'
+            matricula = f'm{random.randint(0,999999):06d}'
             valor = random.randint(1, 999)
           
             base_dados.append((matricula, valor)) #Adiciona o par (matrícula, valor) à base de dados
