@@ -53,11 +53,6 @@ class TabelaHash:
                 return True  #Retorna True para indicar que a exclusão foi bem-sucedida
       
         return False #Se a matrícula não foi encontrada, retorna False
-    
-    def ordenar(self):
-        for lista in self.tabela: #Ordena todas as listas na tabela hash (não é uma operação comum em tabelas hash)
-            lista.sort()  #Ordena a lista atual
-        print("Tabela ordenada com sucesso.") #Exibe uma mensagem indicando que a ordenação foi concluída
 
     @staticmethod   
     def criarBaseDados(tamanho): #Cria uma base de dados aleatória com matrículas e valores associados

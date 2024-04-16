@@ -12,7 +12,6 @@ while True:
         print("1. Buscar valor por matrícula")
         print("2. Imprimir todos os valores")
         print("3. Preencher tabela com base de dados")
-        #print("4. Ordenar tabela")
         print("4. Excluir valor por matrícula")
         print("5. Inserir novo valor")
         print("6. Visualizar toda tabela")
@@ -27,8 +26,6 @@ while True:
             tabela.imprimirTodosValores()
         elif opcao == "3":
             tabela.preencherComBaseDados()
-        #elif opcao == "4":
-            #tabela.ordenar()
         elif opcao == "4":
             tabela.excluirPorMatricula()
         elif opcao == "5":
